@@ -13,6 +13,6 @@ spec:
     spec:
       containers:
       - name: goserver
-        image: goserver
+        image: dcamppos83/argocd-fullcycle:2a42f9b4f607e04ccfee6761da85a3b1824288f3
         ports:
         - containerPort: 8080
