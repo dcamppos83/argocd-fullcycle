@@ -1,0 +1,20 @@
+name: CI-CD
+on:
+  push:
+    branches:
+      - "main"
+jobs:
+  build:
+    name: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+
+      - name: build image ans push dockerhub
+        uses: docker/build-push-action@v1.1.0
+        with:
+          username: dcamppos83
+          password: ${{ secrets.DOCKER_PASSWORD }}
+          repository: dcamppos83/argocd-fullcycle
+          tags: ${{ github.sha }}, latest
