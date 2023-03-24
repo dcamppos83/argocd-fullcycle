@@ -42,7 +42,7 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "Deploy Action"
-          git commit -ma "change image tag"
+          git commit -am "change image tag"
 
       - name: push
         uses: ad-m/github-push-action@master
